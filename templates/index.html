@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!--  Header  -->
+	<div id="header">
+		<h1>My Awesome Blog</h1>
+	</div>
+	
+	<!-- Posts --> 
+	<div id="posts">
+		{% for post in posts %}
+			<div id="posts">
+			 	<span class="post-date">{{ post.date|date }}</span>
+			 	<a href="{{ post.url() }}" class="post-title">{{ ost.title }}
+			 		{% if post.subtitle %} {{ post.subtitle }}
+					{% endif %}	
+				</a>
+			</div>
+
+		{% endfor %}
+
+	</div>
+{% endblock content %}
